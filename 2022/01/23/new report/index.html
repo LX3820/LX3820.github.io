@@ -27,13 +27,11 @@
 <meta property="og:site_name" content="LX3820">
 <meta property="og:description" content="RSA的算法：1.任意选取两个不同的大素数p和q计算乘积n&#x3D;p$\times$q 利用欧拉函数求出与n互质的数的个数$\varphi$(n)&#x3D;(p-1)$\times$(q-1) &#x3D;&#x3D;欧拉函数:&#x3D;&#x3D; 欧拉函数的定义： 欧拉函数(Euler’s totient function),即为$\phi$(n),是小于等于n且与n互质的数的个数 例如$\varphi$(7)&#x3D;6,因为与7互质的数有1，2，3">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/Users/86150/Desktop/%E6%9C%AA%E5%91%BD%E5%90%8D%E5%9B%BE%E7%89%87.png">
 <meta property="article:published_time" content="2022-01-23T04:38:09.000Z">
-<meta property="article:modified_time" content="2022-02-16T04:34:54.474Z">
+<meta property="article:modified_time" content="2022-02-17T08:16:05.924Z">
 <meta property="article:author" content="Wch">
 <meta property="article:tag" content="已知p,q,e,c求明文">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2022/Users/86150/Desktop/%E6%9C%AA%E5%91%BD%E5%90%8D%E5%9B%BE%E7%89%87.png">
 
 
 <link rel="canonical" href="http://example.com/2022/01/23/new%20report/">
@@ -124,7 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RSA%E7%9A%84%E7%AE%97%E6%B3%95%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">RSA的算法：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%B2%E7%9F%A5p-q-e-n-%E6%B1%82%E7%A7%81%E9%92%A5d%E3%80%82"><span class="nav-number">2.</span> <span class="nav-text">&#x3D;&#x3D;已知p,q,e,n.求私钥d。&#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RSA%E5%85%B1%E6%A8%A1%E6%94%BB%E5%87%BB"><span class="nav-number">3.</span> <span class="nav-text">RSA共模攻击</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rsa-dp%EF%BC%8Cdq%E6%B3%84%E9%9C%B2"><span class="nav-number">4.</span> <span class="nav-text">rsa dp，dq泄露</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text"></span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RSA%E7%9A%84%E7%AE%97%E6%B3%95%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">RSA的算法：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%B2%E7%9F%A5p-q-e-n-%E6%B1%82%E7%A7%81%E9%92%A5d%E3%80%82"><span class="nav-number">2.</span> <span class="nav-text">&#x3D;&#x3D;已知p,q,e,n.求私钥d。&#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RSA%E5%85%B1%E6%A8%A1%E6%94%BB%E5%87%BB"><span class="nav-number">3.</span> <span class="nav-text">&#x3D;&#x3D;RSA共模攻击&#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rsa-dp%EF%BC%8Cdq%E6%B3%84%E9%9C%B2"><span class="nav-number">4.</span> <span class="nav-text">&#x3D;&#x3D;rsa dp，dq泄露&#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dp%E6%B3%84%E9%9C%B2"><span class="nav-number">5.</span> <span class="nav-text">&#x3D;&#x3D;dp泄露&#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%8E%E5%8A%A0%E5%AF%86%E6%8C%87%E6%95%B0%E6%94%BB%E5%87%BB"><span class="nav-number">6.</span> <span class="nav-text">&#x3D;&#x3D;低加密指数攻击&#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B1%E7%B4%A0%E6%95%B0%E6%94%BB%E5%87%BB"><span class="nav-number">7.</span> <span class="nav-text">&#x3D;&#x3D;共素数攻击&#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86"><span class="nav-number">8.</span> <span class="nav-text">&#x3D;&#x3D;维吉尼亚加密和解密&#x3D;&#x3D;</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -139,13 +137,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -215,7 +218,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-02-16 12:34:54" itemprop="dateModified" datetime="2022-02-16T12:34:54+08:00">2022-02-16</time>
+      <time title="修改时间：2022-02-17 16:16:05" itemprop="dateModified" datetime="2022-02-17T16:16:05+08:00">2022-02-17</time>
     </span>
 
   
@@ -246,7 +249,7 @@
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h1 id="RSA共模攻击"><a href="#RSA共模攻击" class="headerlink" title="RSA共模攻击"></a>RSA共模攻击</h1><p><strong>已知c<del>1</del>,c<del>2</del>,e<del>1</del>,e<del>2</del>,n,共模攻击: 即用两个及以上的公钥(n,e)来加密同一条信息m</strong></p>
+<h1 id="RSA共模攻击"><a href="#RSA共模攻击" class="headerlink" title="==RSA共模攻击=="></a>==RSA共模攻击==</h1><p><strong>已知c<del>1</del>,c<del>2</del>,e<del>1</del>,e<del>2</del>,n,共模攻击: 即用两个及以上的公钥(n,e)来加密同一条信息m</strong></p>
 <p><strong>因为c<del>1</del>=m^e1^mod n,c<del>2</del>=m^e2^mod n</strong></p>
 <p><strong>思路：我们求明文m，仿佛就在眼前，却无力回天；我们试着将c1和c2相乘；得到：c1c2=m^e2+e2^mod n</strong></p>
 <p><strong>想办法让m的幂次为1则求出m，由此想到欧几里得算法</strong></p>
@@ -259,20 +262,54 @@
 
 
 
-<h1 id="rsa-dp，dq泄露"><a href="#rsa-dp，dq泄露" class="headerlink" title="rsa dp，dq泄露"></a>rsa dp，dq泄露</h1><p><strong>已知 dp, dq,c,p,q求明文m：</strong></p>
+<h1 id="rsa-dp，dq泄露"><a href="#rsa-dp，dq泄露" class="headerlink" title="==rsa dp，dq泄露=="></a>==rsa dp，dq泄露==</h1><p><strong>已知 dp, dq,c,p,q求明文m：</strong></p>
 <p><strong>RSA中已知dq，dp,p,q的计算m步骤（dp = d mod (p-1),dq = d mod (q-1)）：</strong></p>
 <p><strong>(1).计算q模p的逆元 I ;</strong></p>
 <p><strong>(2).计算m1 = (c^dp^) mod p;</strong></p>
 <p><strong>(3).计算m2 = (c^dq^) mod q;</strong></p>
 <p><strong>(4).计算m=( ( ( (m2-m1) $\times$ I) %q )$\times$ p + m1 ) % n</strong></p>
 <p><strong>以下是证明:</strong></p>
-<p><img src="../../../Users/86150/Desktop/%E6%9C%AA%E5%91%BD%E5%90%8D%E5%9B%BE%E7%89%87.png"></p>
+<p>![](D:\blog\source_posts\new report.assets\dp,dq泄露-16450709841481.png)</p>
 <p><strong>以下是python源代码</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line">dp= ...</span><br><span class="line">dq= ...</span><br><span class="line">c= ...</span><br><span class="line">p= ...</span><br><span class="line">q= ...</span><br><span class="line">n=q*p</span><br><span class="line">m1=<span class="built_in">pow</span>(c,dp,p)</span><br><span class="line">m2=<span class="built_in">pow</span>(c,dq,q)</span><br><span class="line">I=gmpy2.invert(p,q)</span><br><span class="line">m=((((m2-m1)*I)%q)*p+m1)%n</span><br><span class="line"><span class="built_in">print</span>(m)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+<h1 id="dp泄露"><a href="#dp泄露" class="headerlink" title="==dp泄露=="></a>==dp泄露==</h1><p><strong>关键公式</strong></p>
+<p><strong>1.已知n，e，dp</strong></p>
+<p><strong>2.dp e= ed mod (p-1)</strong></p>
+<p><strong>以下是大哥的笔记:</strong></p>
+<p>![](new report.assets/dp泄露.png)</p>
+<p><strong>以下是源代码:</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line">e = ...</span><br><span class="line">n = ...</span><br><span class="line">dp = ...</span><br><span class="line">c = ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,e):                   <span class="comment">#在范围(1,e)之间进行遍历</span></span><br><span class="line">    <span class="keyword">if</span>(dp*e-<span class="number">1</span>)%i == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">if</span> n%(((dp*e-<span class="number">1</span>)//i)+<span class="number">1</span>) == <span class="number">0</span>:   <span class="comment">#存在p，使得n能被p整除</span></span><br><span class="line">            p=((dp*e-<span class="number">1</span>)//i)+<span class="number">1</span></span><br><span class="line">            q=n//(((dp*e-<span class="number">1</span>)//i)+<span class="number">1</span>)</span><br><span class="line">            phi=(q-<span class="number">1</span>)*(p-<span class="number">1</span>)            <span class="comment">#欧拉定理</span></span><br><span class="line">            d=gmpy2.invert(e,phi)         <span class="comment">#求模逆</span></span><br><span class="line">            m=<span class="built_in">pow</span>(c,d,n)               <span class="comment">#快速求幂取模运算</span></span><br><span class="line">            <span class="built_in">print</span>(m)       <span class="comment">#16进制转文本   </span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>#==给出公钥和密文.enc文件求解明文==</p>
+<p><strong>解题步骤:</strong></p>
+<p><strong>1.在线Rsa 公私钥分解 Exponent、Modulus，Rsa公私钥指数、系数(模数)分解求e，n</strong></p>
+<p><strong>2.然后用factordb.com求p,q的工具求出p，q</strong></p>
+<p><strong>3，写脚本解密.enc文件</strong></p>
+<p><strong>以下是python源代码:</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">import</span> rsa</span><br><span class="line"></span><br><span class="line">e=<span class="number">65537</span></span><br><span class="line">n=<span class="number">86934482296048119190666062003494800588905656017203025617216654058378322103517</span></span><br><span class="line">p=<span class="number">285960468890451637935629440372639283459</span></span><br><span class="line">q=<span class="number">304008741604601924494328155975272418463</span></span><br><span class="line"></span><br><span class="line">phin=(q-<span class="number">1</span>)*(p-<span class="number">1</span>)</span><br><span class="line">d=gmpy2.invert(e,phin)</span><br><span class="line"></span><br><span class="line">key=rsa.PrivateKey(n,e,<span class="built_in">int</span>(d),p,q)   <span class="comment">#这里是求私钥</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;#文件路径&quot;</span>,<span class="string">&quot;rb+&quot;</span>)<span class="keyword">as</span> f:  <span class="comment">#这里是打开.enc文件</span></span><br><span class="line"> f=f.read()<span class="comment">#阅读.enc文件</span></span><br><span class="line"><span class="built_in">print</span>(rsa.decrypt(f,key))<span class="comment">#解密.enc文件f是密文，key是私钥。</span></span><br><span class="line"><span class="comment">#强调一定要把需要解密的文件拖到pycharm中</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="低加密指数攻击"><a href="#低加密指数攻击" class="headerlink" title="==低加密指数攻击=="></a>==低加密指数攻击==</h1><p><strong>题目情况: 当e指数特别小时，</strong></p>
+<p><strong>以下是python源代码:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#python3</span><br><span class="line">## -*- coding: utf-8 -*-#</span><br><span class="line">from gmpy2 import iroot</span><br><span class="line">import libnum</span><br><span class="line">e = .</span><br><span class="line">n = ...</span><br><span class="line">c = ...</span><br><span class="line">k = 0</span><br><span class="line">while 1:</span><br><span class="line">    res = iroot(c+k*n,e)  #c+k*n 开3次方根 能开3次方即可</span><br><span class="line">    print(res)</span><br><span class="line">    #res = (mpz(13040004482819713819817340524563023159919305047824600478799740488797710355579494486728991357), True)</span><br><span class="line">    if(res[1] == True):</span><br><span class="line">        print(libnum.n2s(int(res[0]))) #转为字符串</span><br><span class="line">        break</span><br><span class="line">    k=k+1</span><br><span class="line">#b&#x27;flag&#123;25df8caf006ee5db94d48144c33b2c3b&#125;&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="共素数攻击"><a href="#共素数攻击" class="headerlink" title="==共素数攻击=="></a>==共素数攻击==</h1><p><strong>共用素指数e，不同的n和c</strong></p>
+<p><strong>以下是源代码:</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> gmpy2 <span class="keyword">import</span> gcd,invert</span><br><span class="line"><span class="keyword">from</span> libnum <span class="keyword">import</span> n2s</span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line">n1 = ...</span><br><span class="line">c1 = ...</span><br><span class="line">n2 = ...</span><br><span class="line">c2 = ...</span><br><span class="line">q = gcd(n1, n2)</span><br><span class="line">p = n1//q</span><br><span class="line">r = n2//q</span><br><span class="line"><span class="built_in">print</span>(n2s(<span class="built_in">pow</span>(c1, <span class="built_in">int</span>(invert(e, (p-<span class="number">1</span>) * (q-<span class="number">1</span>))), n1)).decode(), end = <span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(n2s(<span class="built_in">pow</span>(c2, <span class="built_in">int</span>(invert(e, (r - <span class="number">1</span>) * (q - <span class="number">1</span>))), n2)).decode(), end=<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="comment">#求私钥d的时候大整数n不同所以不易求欧拉函数；因此我们可以求n1和n2的最大公约数，然后随便选取一个n1或n2来除以最大公约数q；最后用r或者用p求出来的欧拉函数都相同。</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="维吉尼亚加密和解密"><a href="#维吉尼亚加密和解密" class="headerlink" title="==维吉尼亚加密和解密=="></a>==维吉尼亚加密和解密==</h1><p><strong>维吉尼亚加密解密原理：</strong></p>
+<p>![](new report.assets/维吉尼亚原理.png)</p>
+<p><strong>以下是加密源代码：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">encrypt</span>(<span class="params">message,key</span>):</span><span class="comment">#加密</span></span><br><span class="line">    cipher = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    non_alpha_count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (<span class="built_in">len</span>(message)):<span class="comment">#遍历</span></span><br><span class="line">        <span class="keyword">if</span> message[i].isalpha():</span><br><span class="line">            <span class="keyword">if</span> message[i].islower():</span><br><span class="line">                offset = <span class="built_in">ord</span>(key[(i - non_alpha_count) % <span class="built_in">len</span>(key)]) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">                cipher += <span class="built_in">chr</span>((<span class="built_in">ord</span> (message[i]) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>) + offset) % <span class="number">26</span> + <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                offset = <span class="built_in">ord</span>(key[(i - non_alpha_count) % <span class="built_in">len</span>(key)]) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">                cipher += <span class="built_in">chr</span>((<span class="built_in">ord</span> (message[i]) - <span class="built_in">ord</span>(<span class="string">&#x27;A&#x27;</span>) + offset) % <span class="number">26</span> + <span class="built_in">ord</span>(<span class="string">&#x27;A&#x27;</span>))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            cipher += message[i]</span><br><span class="line">            non_alpha_count += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> cipher</span><br><span class="line">message=<span class="string">&#x27;YzBibXZnaHl6X3swUmF6X2d4eG0wdGhrem9fMG9iMG1fdm9rY2N6dF8hcn0=&#x27;</span></span><br><span class="line">key=<span class="string">&#x27;hgame&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(encrypt(message,key))</span><br></pre></td></tr></table></figure>
+
+<p><strong>以下是解密源代码:</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decrypt</span>(<span class="params">cipher,key</span>):</span><span class="comment">#解密</span></span><br><span class="line">    message = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    non_alpha_count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (<span class="built_in">len</span>(cipher)):<span class="comment">#遍历</span></span><br><span class="line">        <span class="keyword">if</span> cipher[i].isalpha():</span><br><span class="line">            <span class="keyword">if</span> cipher[i].islower():</span><br><span class="line">                offset = <span class="built_in">ord</span>(key[(i - non_alpha_count) % <span class="built_in">len</span>(key)]) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">                message += <span class="built_in">chr</span>((<span class="built_in">ord</span> (cipher[i]) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>) - offset) % <span class="number">26</span> + <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                offset = <span class="built_in">ord</span>(key[(i - non_alpha_count) % <span class="built_in">len</span>(key)]) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">                message += <span class="built_in">chr</span>((<span class="built_in">ord</span> (cipher[i]) - <span class="built_in">ord</span>(<span class="string">&#x27;A&#x27;</span>) - offset) % <span class="number">26</span> + <span class="built_in">ord</span>(<span class="string">&#x27;A&#x27;</span>))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            message += cipher[i]</span><br><span class="line">            non_alpha_count += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> message</span><br><span class="line">cipher=<span class="string">&quot;FfBufEFnmLs6D3siYtL6X2p4iN0cdSlykm9rQN9oMS1jks9rK2R6kL8hor0=&quot;</span></span><br><span class="line">key=<span class="string">&quot;hgame&quot;</span></span><br><span class="line"><span class="built_in">print</span>(decrypt(cipher,key))</span><br></pre></td></tr></table></figure>
+
+
     </div>
 
     
@@ -286,6 +323,15 @@
 
         
 
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/02/17/hgame%E9%A2%98%E8%A7%A3/" rel="next" title="hgame题解">
+                  hgame题解 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
@@ -329,6 +375,12 @@
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":"ture","tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
 
 
