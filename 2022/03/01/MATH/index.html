@@ -28,7 +28,7 @@
 <meta property="og:description" content="二次残差Quadratic Residues a^2^ $\equiv$ x mod p 即,a^2&gt;p时,  (a^2-x)是p的倍数 (当a^2&lt;p时, x &#x3D; a^2) $\therefore$x&#x3D; a^2^-mp (a^2^ &gt; p) 例如： 12345678910p&#x3D;7a +&#x3D; 1 1^2 &#x3D; 1 (mod 7) # 1&lt;7, x&#x3D;a^2&#x3D;12^2 &#x3D; 4 (mo">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-01T11:53:59.000Z">
-<meta property="article:modified_time" content="2022-03-01T12:19:11.929Z">
+<meta property="article:modified_time" content="2022-03-05T11:49:37.928Z">
 <meta property="article:author" content="Wch">
 <meta property="article:tag" content="数论">
 <meta name="twitter:card" content="summary">
@@ -122,14 +122,14 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E6%AE%8B%E5%B7%AE"><span class="nav-number">1.</span> <span class="nav-text">二次残差</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E6%AE%8B%E5%B7%AE"><span class="nav-number">1.</span> <span class="nav-text">二次残差</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">中国剩余定理</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Wch"
-      src="D:\Users\86150\Desktop\小王子.img">
+      src="/%5Cimages%5Cavatar.png">
   <p class="site-author-name" itemprop="name">Wch</p>
   <div class="site-description" itemprop="description">初来乍到 多多关照</div>
 </div>
@@ -137,7 +137,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -148,7 +148,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -190,7 +190,7 @@
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/01/MATH/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="D:\Users\86150\Desktop\小王子.img">
+      <meta itemprop="image" content="/%5Cimages%5Cavatar.png">
       <meta itemprop="name" content="Wch">
       <meta itemprop="description" content="初来乍到 多多关照">
     </span>
@@ -210,9 +210,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-03-01 19:53:59 / 修改时间：20:19:11" itemprop="dateCreated datePublished" datetime="2022-03-01T19:53:59+08:00">2022-03-01</time>
+      <time title="创建时间：2022-03-01 19:53:59" itemprop="dateCreated datePublished" datetime="2022-03-01T19:53:59+08:00">2022-03-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-03-05 19:49:37" itemprop="dateModified" datetime="2022-03-05T19:49:37+08:00">2022-03-05</time>
     </span>
 
   
@@ -233,6 +239,33 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">p=<span class="number">7</span></span><br><span class="line">a += <span class="number">1</span> </span><br><span class="line"><span class="number">1</span>^<span class="number">2</span> = <span class="number">1</span> (mod <span class="number">7</span>) <span class="comment"># 1&lt;7, x=a^2=1</span></span><br><span class="line"><span class="number">2</span>^<span class="number">2</span> = <span class="number">4</span> (mod <span class="number">7</span>) <span class="comment"># 4&lt;7, x=a^2=4</span></span><br><span class="line"><span class="number">3</span>^<span class="number">2</span> = <span class="number">2</span> (mod <span class="number">7</span>) <span class="comment"># 9&gt;7, x=a^2-p*1=2</span></span><br><span class="line"><span class="number">4</span>^<span class="number">2</span> = <span class="number">2</span> (mod <span class="number">7</span>) <span class="comment"># 16&gt;7, x=a^2-p*2=2</span></span><br><span class="line"><span class="number">5</span>^<span class="number">2</span> = <span class="number">4</span> (mod <span class="number">7</span>) <span class="comment"># 25&gt;7, x=a^2-p*3=4</span></span><br><span class="line"><span class="number">6</span>^<span class="number">2</span> = <span class="number">1</span> (mod <span class="number">7</span>) <span class="comment"># 36&gt;7, x=a^2-p*5=1</span></span><br><span class="line"><span class="comment"># 1,2,4 are Quadratic Residue of 7</span></span><br><span class="line">    <span class="comment"># 3,5,6 are Quadratic Non-Residue of 7</span></span><br></pre></td></tr></table></figure>
 
 <hr>
+<p><strong>Legendre Symbol</strong></p>
+<p><strong>Euler 判别准则</strong></p>
+<p><strong>对于奇素数p</strong></p>
+<p><strong>a^(p-1)//2^ $\equiv$ (a/p) $\equiv$ 1 mod p(此时有解) or -1 mod q (此时无解)</strong></p>
+<p><strong>当已知条件p= 3 mod 4 时，可求解特殊化：</strong></p>
+<p><strong>(a^(p+1)/4^)^2^=a^(p+1)/2^ mod p</strong></p>
+<p><strong>(a^(p+1)/4^)^2^=x^(p-1)^x^2^  mod p(由费马小定理可知)</strong></p>
+<p><strong>所以(a^(p+1)/4^)^2^=x^2^ mod p</strong></p>
+<p><strong>所以a^(p+1)/4^mod p是一个解</strong></p>
+<h1 id="中国剩余定理"><a href="#中国剩余定理" class="headerlink" title="中国剩余定理"></a>中国剩余定理</h1><p><strong>一般地，一次同余式组可以表示为：</strong></p>
+<p>​                                                <strong>x $\equiv$ b<del>1</del> (modm<del>1</del>)</strong></p>
+<p>​                                                <strong>x $\equiv$ b<del>2</del> (mod m<del>2</del>)</strong></p>
+<p>​                                                <strong>……</strong></p>
+<p>​                                                <strong>x $\equiv$ b<del>k</del> (mod m<del>k</del>)</strong></p>
+<p><strong>设 m<del>1</del> , m<del>2</del> , …. , m<del>k</del>两两互素，则上面的同余式组有唯一的解：</strong></p>
+<p><strong>x $\equiv$ M<del>1</del>^-1^M<del>1</del>b<del>1</del>+M<del>2</del>^-1^M<del>2</del>b<del>2</del>+…..+M<del>k</del>^-1^M<del>k</del>b<del>k</del>(mod m)</strong></p>
+<p><strong>m=m<del>1</del> m<del>2</del> …m<del>k</del> ,  M<del>i</del>=m/m<del>i</del> ，M<del>i</del>^-1^=(也就是M<del>i</del>与m<del>i</del>的逆元)</strong></p>
+<p><strong>例子：</strong></p>
+<p><strong>x $\equiv$ 2 (mod 3)</strong></p>
+<p><strong>x $\equiv$ 3(mod 5)</strong></p>
+<p><strong>x$\equiv$ 2(mod 7)</strong></p>
+<p><strong>m<del>1</del>=3,m<del>2</del>=5, m<del>3</del>=7，m=m<del>1</del>m<del>2</del>m<del>3</del>= 3 $\times$ 5  $\times$7</strong></p>
+<p><strong>M<del>1</del>=m/m<del>1</del>,M<del>2</del>=m/m<del>2</del>,M<del>3</del>=m/m<del>3</del></strong></p>
+<p><strong>M<del>1</del>^-1^=M<del>1</del>(mod m<del>1</del>)</strong></p>
+<p><strong>M<del>2</del>^-1^=M<del>2</del>(mod m<del>2</del>)</strong></p>
+<p><strong>M<del>3</del>^-1^=M<del>3</del>(mod m<del>3</del>)</strong></p>
+<p><strong>所以x$\equiv$M<del>1</del>^1^M<del>1</del>b<del>1</del>+M<del>2</del>^1^M<del>2</del>b<del>2</del>+M<del>3</del>^1^M<del>3</del>b<del>3</del></strong></p>
 
     </div>
 
@@ -254,6 +287,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2022/03/04/AliceandBob/" rel="next" title="AliceandBob">
+                  AliceandBob <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
