@@ -133,18 +133,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-      <div class="site-state-item site-state-categories">
-          <a href="/categories/">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -182,7 +177,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/12/text/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/12/Alice-and-Bob/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -195,7 +190,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/12/text/" class="post-title-link" itemprop="url">text</a>
+          <a href="/2022/03/12/Alice-and-Bob/" class="post-title-link" itemprop="url">Alice_and_Bob</a>
         </h2>
 
         <div class="post-meta-container">
@@ -207,7 +202,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-03-12 14:29:22 / 修改时间：17:52:44" itemprop="dateCreated datePublished" datetime="2022-03-12T14:29:22+08:00">2022-03-12</time>
+      <time title="创建时间：2022-03-12 19:58:30 / 修改时间：20:00:41" itemprop="dateCreated datePublished" datetime="2022-03-12T19:58:30+08:00">2022-03-12</time>
     </span>
 
   
@@ -220,8 +215,88 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <img src="/2022/03/12/text/avatar.png" class>
+          <img src="/2022/03/12/Alice-and-Bob/image-20220304204737922.png" class="">
 
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/12/hgame%E9%A2%98%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wch">
+      <meta itemprop="description" content="初来乍到 多多关照">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LX3820">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/03/12/hgame%E9%A2%98%E8%A7%A3/" class="post-title-link" itemprop="url">hgame题解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-03-12 19:51:55 / 修改时间：19:53:54" itemprop="dateCreated datePublished" datetime="2022-03-12T19:51:55+08:00">2022-03-12</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Easy-RSA"><a href="#Easy-RSA" class="headerlink" title="Easy RSA"></a>Easy RSA</h1><p><strong>以下是题目：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> gcd</span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"><span class="keyword">from</span> gmpy2 <span class="keyword">import</span> next_prime</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> getPrime</span><br><span class="line"><span class="keyword">from</span> secret <span class="keyword">import</span> flag<span class="comment">##意思是将flag进行了加密，让你解出flag</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">encrypt</span>(<span class="params">c</span>):</span></span><br><span class="line">    p = getPrime(<span class="number">8</span>)</span><br><span class="line">    q = getPrime(<span class="number">8</span>)</span><br><span class="line">    e = randint(<span class="number">0</span>, p * q)</span><br><span class="line">    <span class="keyword">while</span> gcd(e, (p - <span class="number">1</span>) * (q - <span class="number">1</span>)) != <span class="number">1</span>:</span><br><span class="line">        e = <span class="built_in">int</span>(next_prime(e))</span><br><span class="line">    <span class="keyword">return</span> e, p, q, <span class="built_in">pow</span>(<span class="built_in">ord</span>(c), e, p * q)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">list</span>(<span class="built_in">map</span>(encrypt, flag)))</span><br><span class="line">    <span class="comment"># [(12433, 149, 197, 104), (8147, 131, 167, 6633), (10687, 211, 197, 35594), (19681, 131, 211, 15710), (33577, 251, 211, 38798), (30241, 157, 251, 35973), (293, 211, 157, 31548), (26459, 179, 149, 4778), (27479, 149, 223, 32728), (9029, 223, 137, 20696), (4649, 149, 151, 13418), (11783, 223, 251, 14239), (13537, 179, 137, 11702), (3835, 167, 139, 20051), (30983, 149, 227, 23928), (17581, 157, 131, 5855), (35381, 223, 179, 37774), (2357, 151, 223, 1849), (22649, 211, 229, 7348), (1151, 179, 223, 17982), (8431, 251, 163, 30226), (38501, 193, 211, 30559), (14549, 211, 151, 21143), (24781, 239, 241, 45604), (8051, 179, 131, 7994), (863, 181, 131, 11493), (1117, 239, 157, 12579), (7561, 149, 199, 8960), (19813, 239, 229, 53463), (4943, 131, 157, 14606), (29077, 191, 181, 33446), (18583, 211, 163, 31800), (30643, 173, 191, 27293), (11617, 223, 251, 13448), (19051, 191, 151, 21676), (18367, 179, 157, 14139), (18861, 149, 191, 5139), (9581, 211, 193, 25595)]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>解题代码：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> gmpy2 <span class="keyword">import</span> invert</span><br><span class="line">cipher=[(<span class="number">12433</span>, <span class="number">149</span>, <span class="number">197</span>, <span class="number">104</span>), (<span class="number">8147</span>, <span class="number">131</span>, <span class="number">167</span>, <span class="number">6633</span>), (<span class="number">10687</span>, <span class="number">211</span>, <span class="number">197</span>, <span class="number">35594</span>), (<span class="number">19681</span>, <span class="number">131</span>, <span class="number">211</span>, <span class="number">15710</span>), (<span class="number">33577</span>, <span class="number">251</span>, <span class="number">211</span>, <span class="number">38798</span>), (<span class="number">30241</span>, <span class="number">157</span>, <span class="number">251</span>, <span class="number">35973</span>), (<span class="number">293</span>, <span class="number">211</span>, <span class="number">157</span>, <span class="number">31548</span>), (<span class="number">26459</span>, <span class="number">179</span>, <span class="number">149</span>, <span class="number">4778</span>), (<span class="number">27479</span>, <span class="number">149</span>, <span class="number">223</span>, <span class="number">32728</span>), (<span class="number">9029</span>, <span class="number">223</span>, <span class="number">137</span>, <span class="number">20696</span>), (<span class="number">4649</span>, <span class="number">149</span>, <span class="number">151</span>, <span class="number">13418</span>), (<span class="number">11783</span>, <span class="number">223</span>, <span class="number">251</span>, <span class="number">14239</span>), (<span class="number">13537</span>, <span class="number">179</span>, <span class="number">137</span>, <span class="number">11702</span>), (<span class="number">3835</span>, <span class="number">167</span>, <span class="number">139</span>, <span class="number">20051</span>), (<span class="number">30983</span>, <span class="number">149</span>, <span class="number">227</span>, <span class="number">23928</span>), (<span class="number">17581</span>, <span class="number">157</span>, <span class="number">131</span>, <span class="number">5855</span>), (<span class="number">35381</span>, <span class="number">223</span>, <span class="number">179</span>, <span class="number">37774</span>), (<span class="number">2357</span>, <span class="number">151</span>, <span class="number">223</span>, <span class="number">1849</span>), (<span class="number">22649</span>, <span class="number">211</span>, <span class="number">229</span>, <span class="number">7348</span>), (<span class="number">1151</span>, <span class="number">179</span>, <span class="number">223</span>, <span class="number">17982</span>), (<span class="number">8431</span>, <span class="number">251</span>, <span class="number">163</span>, <span class="number">30226</span>), (<span class="number">38501</span>, <span class="number">193</span>, <span class="number">211</span>, <span class="number">30559</span>), (<span class="number">14549</span>, <span class="number">211</span>, <span class="number">151</span>, <span class="number">21143</span>), (<span class="number">24781</span>, <span class="number">239</span>, <span class="number">241</span>, <span class="number">45604</span>), (<span class="number">8051</span>, <span class="number">179</span>, <span class="number">131</span>, <span class="number">7994</span>), (<span class="number">863</span>, <span class="number">181</span>, <span class="number">131</span>, <span class="number">11493</span>), (<span class="number">1117</span>, <span class="number">239</span>, <span class="number">157</span>, <span class="number">12579</span>), (<span class="number">7561</span>, <span class="number">149</span>, <span class="number">199</span>, <span class="number">8960</span>), (<span class="number">19813</span>, <span class="number">239</span>, <span class="number">229</span>, <span class="number">53463</span>), (<span class="number">4943</span>, <span class="number">131</span>, <span class="number">157</span>, <span class="number">14606</span>), (<span class="number">29077</span>, <span class="number">191</span>, <span class="number">181</span>, <span class="number">33446</span>), (<span class="number">18583</span>, <span class="number">211</span>, <span class="number">163</span>, <span class="number">31800</span>), (<span class="number">30643</span>, <span class="number">173</span>, <span class="number">191</span>, <span class="number">27293</span>), (<span class="number">11617</span>, <span class="number">223</span>, <span class="number">251</span>, <span class="number">13448</span>), (<span class="number">19051</span>, <span class="number">191</span>, <span class="number">151</span>, <span class="number">21676</span>), (<span class="number">18367</span>, <span class="number">179</span>, <span class="number">157</span>, <span class="number">14139</span>), (<span class="number">18861</span>, <span class="number">149</span>, <span class="number">191</span>, <span class="number">5139</span>), (<span class="number">9581</span>, <span class="number">211</span>, <span class="number">193</span>, <span class="number">25595</span>)]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decrypt</span>(<span class="params">cipher</span>):</span></span><br><span class="line">   e,p,q,c=cipher</span><br><span class="line">   <span class="keyword">return</span>  <span class="built_in">chr</span>(<span class="built_in">pow</span>((c), invert(e,(p-<span class="number">1</span>)*(q-<span class="number">1</span>)), p * q))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;&quot;</span>.join(<span class="built_in">map</span>(decrypt, cipher)))</span><br><span class="line">    <span class="comment"># [(12433, 149, 197, 104), (8147, 131, 167, 6633), (10687, 211, 197, 35594), (19681, 131, 211, 15710), (33577, 251, 211, 38798), (30241, 157, 251, 35973), (293, 211, 157, 31548), (26459, 179, 149, 4778), (27479, 149, 223, 32728), (9029, 223, 137, 20696), (4649, 149, 151, 13418), (11783, 223, 251, 14239), (13537, 179, 137, 11702), (3835, 167, 139, 20051), (30983, 149, 227, 23928), (17581, 157, 131, 5855), (35381, 223, 179, 37774), (2357, 151, 223, 1849), (22649, 211, 229, 7348), (1151, 179, 223, 17982), (8431, 251, 163, 30226), (38501, 193, 211, 30559), (14549, 211, 151, 21143), (24781, 239, 241, 45604), (8051, 179, 131, 7994), (863, 181, 131, 11493), (1117, 239, 157, 12579), (7561, 149, 199, 8960), (19813, 239, 229, 53463), (4943, 131, 157, 14606), (29077, 191, 181, 33446), (18583, 211, 163, 31800), (30643, 173, 191, 27293), (11617, 223, 251, 13448), (19051, 191, 151, 21676), (18367, 179, 157, 14139), (18861, 149, 191, 5139), (9581, 211, 193, 25595)]</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Matryoshka"><a href="#Matryoshka" class="headerlink" title="Matryoshka"></a>Matryoshka</h1><img src="/2022/03/12/hgame%E9%A2%98%E8%A7%A3/Matryoshka-16450874799731.png" class="">
+
+<p><strong>题目给了很小的提示：Vigenere：hgame(这就是加密key)</strong></p>
+<p>懒得慢慢写了，直接写解题步骤吧：</p>
+<p><strong>1.打开文件发现是盲文于是用工具盲文解密：解密工具（上链接）：</strong></p>
+<hr>
+<p><strong>解密之后发现很像摩斯密码（但是又不像，因为还是有盲文，但是非常接近摩斯了，就把 ：(原文可不是冒号)都改成”.”用python(写个简单的字符串替换)）</strong></p>
+<p><strong>2.替换之后就变成摩斯了，不过不要高兴太早：摩斯解密后发现没什么东西于是将他们逆转过来！（用python的.reverse()）逆转之后再解码发现可以</strong></p>
+<p><strong>3.十六进制解码：</strong></p>
+<p><strong>4.解码后发现很像base64，但是base64无法解，所以就看到提示，维吉尼斯解码（在我博客Crypto有提到原理和解密加密代码）</strong></p>
+<p><strong>5.解完就舒坦了，base64，栅栏，凯撒okay啦！</strong></p>
 
       
     </div>
@@ -271,9 +346,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-03-07 20:18:23 / 修改时间：20:44:36" itemprop="dateCreated datePublished" datetime="2022-03-07T20:18:23+08:00">2022-03-07</time>
+      <time title="创建时间：2022-03-07 20:18:23" itemprop="dateCreated datePublished" datetime="2022-03-07T20:18:23+08:00">2022-03-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-03-12 19:56:16" itemprop="dateModified" datetime="2022-03-12T19:56:16+08:00">2022-03-12</time>
     </span>
 
   
@@ -295,6 +376,8 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">import</span> binascii</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> isPrime, sieve_base <span class="keyword">as</span> primes</span><br><span class="line"></span><br><span class="line">e = <span class="number">0x10001</span></span><br><span class="line">n = <span class="number">32849718197337581823002243717057659218502519004386996660885100592872201948834155543125924395614928962750579667346279456710633774501407292473006312537723894221717638059058796679686953564471994009285384798450493756900459225040360430847240975678450171551048783818642467506711424027848778367427338647282428667393241157151675410661015044633282064056800913282016363415202171926089293431012379261585078566301060173689328363696699811123592090204578098276704877408688525618732848817623879899628629300385790344366046641825507767709276622692835393219811283244303899850483748651722336996164724553364097066493953127153066970594638491950199605713033004684970381605908909693802373826516622872100822213645899846325022476318425889580091613323747640467299866189070780620292627043349618839126919699862580579994887507733838561768581933029077488033326056066378869170169389819542928899483936705521710423905128732013121538495096959944889076705471928490092476616709838980562233255542325528398956185421193665359897664110835645928646616337700617883946369110702443135980068553511927115723157704586595844927607636003501038871748639417378062348085980873502535098755568810971926925447913858894180171498580131088992227637341857123607600275137768132347158657063692388249513</span></span><br><span class="line">c = <span class="number">26308018356739853895382240109968894175166731283702927002165268998773708335216338997058314157717147131083296551313334042509806229853341488461087009955203854253313827608275460592785607739091992591431080342664081962030557042784864074533380701014585315663218783130162376176094773010478159362434331787279303302718098735574605469803801873109982473258207444342330633191849040553550708886593340770753064322410889048135425025715982196600650740987076486540674090923181664281515197679745907830107684777248532278645343716263686014941081417914622724906314960249945105011301731247324601620886782967217339340393853616450077105125391982689986178342417223392217085276465471102737594719932347242482670320801063191869471318313514407997326350065187904154229557706351355052446027159972546737213451422978211055778164578782156428466626894026103053360431281644645515155471301826844754338802352846095293421718249819728205538534652212984831283642472071669494851823123552827380737798609829706225744376667082534026874483482483127491533474306552210039386256062116345785870668331513725792053302188276682550672663353937781055621860101624242216671635824311412793495965628876036344731733142759495348248970313655381407241457118743532311394697763283681852908564387282605279108</span></span><br><span class="line"><span class="comment">#primes为前10000个素数的列表</span></span><br><span class="line"><span class="comment">#计算prd = ∏ primes</span></span><br><span class="line">prd = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> primes:</span><br><span class="line">    prd *= i</span><br><span class="line"><span class="comment">#p为(2^prd-1)和n的公约数</span></span><br><span class="line">p = gmpy2.gcd(gmpy2.powmod(<span class="number">2</span>,prd,n)-<span class="number">1</span>,n)</span><br><span class="line">q = n // p</span><br><span class="line">d = gmpy2.invert(e,(p-<span class="number">1</span>)*(q-<span class="number">1</span>))	<span class="comment">#计算私钥d</span></span><br><span class="line">m = gmpy2.powmod(c, d, n)    <span class="comment">#解密</span></span><br><span class="line"></span><br><span class="line">flag = binascii.unhexlify(<span class="built_in">hex</span>(m)[<span class="number">2</span>:])</span><br><span class="line"><span class="built_in">print</span>(flag)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
+
+
       
     </div>
 
@@ -320,7 +403,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/06/cryptohack/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/06/cryptohack%E9%A2%98%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -333,7 +416,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/06/cryptohack/" class="post-title-link" itemprop="url">cryptohack</a>
+          <a href="/2022/03/06/cryptohack%E9%A2%98%E8%A7%A3/" class="post-title-link" itemprop="url">cryptohack</a>
         </h2>
 
         <div class="post-meta-container">
@@ -351,7 +434,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-11 23:01:18" itemprop="dateModified" datetime="2022-03-11T23:01:18+08:00">2022-03-11</time>
+      <time title="修改时间：2022-03-12 19:46:24" itemprop="dateModified" datetime="2022-03-12T19:46:24+08:00">2022-03-12</time>
     </span>
 
   
@@ -365,42 +448,49 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="course-one"><a href="#course-one" class="headerlink" title="course one"></a>course one</h1><p><strong>题目1：数字转ascill码</strong></p>
-<p><img src="/cryptohack.assets/image-20220310193753145.png" alt="image-20220310193753145"></p>
+<img src="/2022/03/06/cryptohack%E9%A2%98%E8%A7%A3/1.png" class="">
+
 <p>题意：将数字转为ascill码</p>
 <p>所以脚本可得：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">b=[]</span><br><span class="line">a=[<span class="number">99</span>, <span class="number">114</span>, <span class="number">121</span>, <span class="number">112</span>, <span class="number">116</span>, <span class="number">111</span>, <span class="number">123</span>, <span class="number">65</span>, <span class="number">83</span>, <span class="number">67</span>, <span class="number">73</span>, <span class="number">73</span>, <span class="number">95</span>, <span class="number">112</span>, <span class="number">114</span>, <span class="number">49</span>, <span class="number">110</span>, <span class="number">116</span>, <span class="number">52</span>, <span class="number">98</span>, <span class="number">108</span>, <span class="number">51</span>, <span class="number">125</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">    b+=<span class="built_in">chr</span>(i)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"><span class="comment">#[&#x27;c&#x27;, &#x27;r&#x27;, &#x27;y&#x27;, &#x27;p&#x27;, &#x27;t&#x27;, &#x27;o&#x27;, &#x27;&#123;&#x27;, &#x27;A&#x27;, &#x27;S&#x27;, &#x27;C&#x27;, &#x27;I&#x27;, &#x27;I&#x27;, &#x27;_&#x27;, &#x27;p&#x27;, &#x27;r&#x27;, &#x27;1&#x27;, &#x27;n&#x27;, &#x27;t&#x27;, &#x27;4&#x27;, &#x27;b&#x27;, &#x27;l&#x27;, &#x27;3&#x27;, &#x27;&#125;&#x27;]</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>题目二：十六进制转为字节</strong></p>
-<p><img src="/cryptohack.assets/image-20220310194244351.png" alt="image-20220310194244351"></p>
+<img src="/2022/03/06/cryptohack%E9%A2%98%E8%A7%A3/2.png" class="">
+
 <p>题意：十六进制转为字节</p>
 <p>脚本可得：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> long_to_bytes</span><br><span class="line">a=<span class="built_in">int</span>(<span class="string">&quot;63727970746f7b596f755f77696c6c5f62655f776f726b696e675f776974685f6865785f737472696e67735f615f6c6f747d&quot;</span>,<span class="number">16</span>)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(long_to_bytes(a))</span><br><span class="line"><span class="comment">#b&#x27;crypto&#123;You_will_be_working_with_hex_strings_a_lot&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>题目三：十六进制为base64</strong></p>
-<p><img src="/cryptohack.assets/image-20220310195139113.png" alt="image-20220310195139113"></p>
+<img src="/2022/03/06/cryptohack%E9%A2%98%E8%A7%A3/3.png" class="">
+
 <p>题意：十六进制编码为base64</p>
 <p>脚本可得：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import base64</span><br><span class="line">a=0x72bca9b68fc16ac7beeb8f849dca1d8a783e8acf9679bf9269f7bf</span><br><span class="line">flag=bytes.fromhex(hex(a)[2:])</span><br><span class="line">print(flag)</span><br><span class="line">print(base64.b64encode(flag))</span><br><span class="line">#b&#x27;crypto/Base+64+Encoding+is+Web+Safe/&#x27;</span><br></pre></td></tr></table></figure>
 
 <p><strong>题目四：大整数转为字节</strong></p>
-<p><img src="/cryptohack.assets/image-20220310200015986.png" alt="image-20220310200015986"></p>
+<img src="/2022/03/06/cryptohack%E9%A2%98%E8%A7%A3/4.png" class="">
+
 <p>题意：大数字转字节</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> long_to_bytes</span><br><span class="line">a=<span class="number">11515195063862318899931685488813747395775516287289682636499965282714637259206269</span></span><br><span class="line"><span class="built_in">print</span>(long_to_bytes((a)))</span><br><span class="line"><span class="comment">#flag=b&#x27;crypto&#123;3nc0d1n6_4ll_7h3_w4y_d0wn&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>题目五：简单(字符串)异或</strong></p>
-<p><img src="/cryptohack.assets/image-20220310200514758.png" alt="image-20220310200514758"></p>
+<img src="/2022/03/06/cryptohack%E9%A2%98%E8%A7%A3/5.png" class="">
+
 <p>题意：将字符串label的每个字符与13异或</p>
 <p>脚本可得：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">&quot;label&quot;</span></span><br><span class="line">flag=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">    flag+=<span class="built_in">chr</span>(<span class="built_in">ord</span>(i)^<span class="number">13</span>)</span><br><span class="line"><span class="built_in">print</span>(flag,end=<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="comment">#aloha</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>题目五：异或的基本算法</strong></p>
-<p><img src="/cryptohack.assets/image-20220310201558403.png" alt="image-20220310201558403"></p>
+<img src="/2022/03/06/cryptohack%E9%A2%98%E8%A7%A3/6.png" class="">
+
 <p>题意:异或求出flag</p>
 <p>解决方案：直接用最后一个异或前面两个可以得到flag</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> xor</span><br><span class="line">k1=<span class="built_in">bytes</span>.fromhex(<span class="string">&#x27;a6c8b6733c9b22de7bc0253266a3867df55acde8635e19c73313&#x27;</span>)</span><br><span class="line">k2_3=<span class="built_in">bytes</span>.fromhex(<span class="string">&#x27;c1545756687e7573db23aa1c3452a098b71a7fbf0fddddde5fc1&#x27;</span>)</span><br><span class="line">flag=<span class="built_in">bytes</span>.fromhex(<span class="string">&#x27;04ee9855208a2cd59091d04767ae47963170d1660df7f56f5faf&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(xor(k1,k2_3,flag))  </span><br><span class="line"><span class="comment">#b&#x27;crypto&#123;x0r_i5_ass0c1at1v3&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>题目六：（异或一定要转为字节去异或）</strong></p>
-<p><img src="/cryptohack.assets/image-20220310210826348.png" alt="image-20220310210826348"></p>
+<img src="/2022/03/06/cryptohack%E9%A2%98%E8%A7%A3/7.png" class="">
+
 <p>题意：</p>
 <p>用单个字节的意思就是用了单个字符去异或</p>
 <p>在ascill码中有256中可能所以遍历所有可能</p>
@@ -409,7 +499,8 @@
 
 <p><strong>题目七：脑经急转弯异或</strong></p>
 <p>题目：</p>
-<p><img src="/cryptohack.assets/image-20220311194023698.png" alt="image-20220311194023698"></p>
+<img src="/2022/03/06/cryptohack%E9%A2%98%E8%A7%A3/8.png" class="">
+
 <p>题意：看提示，记住旗帜的标志：”crypto{“</p>
 <p>题解：先把数据转换位字节，然后跟标识异或得到提示：key&#x3D;myXORkey</p>
 <p>再将字节和key异或可得到flag</p>
@@ -417,36 +508,42 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> xor</span><br><span class="line">data = <span class="string">&#x27;0e0b213f26041e480b26217f27342e175d0e070a3c5b103e2526217f27342e175d0e077e263451150104&#x27;</span></span><br><span class="line">decoded_data = <span class="built_in">bytes</span>.fromhex(data)  <span class="comment"># hex--&gt;byte</span></span><br><span class="line"><span class="built_in">str</span> = <span class="string">&#x27;crypto&#123;&#x27;</span></span><br><span class="line">f=<span class="built_in">bytes</span>(<span class="built_in">str</span>,<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(xor(decoded_data,f))</span><br><span class="line">key = <span class="string">&#x27;&#x27;</span>.join((<span class="built_in">chr</span>(decoded_data[i] ^ <span class="built_in">ord</span>(<span class="built_in">str</span>[i]))) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(<span class="built_in">str</span>)))</span><br><span class="line"><span class="built_in">print</span>(key)</span><br><span class="line">d=<span class="string">&quot;myXORkey&quot;</span></span><br><span class="line">c=<span class="built_in">bytes</span>(d,<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">flag=xor(decoded_data,c)</span><br><span class="line"><span class="built_in">print</span>(flag)</span><br><span class="line"><span class="comment">#b&#x27;crypto&#123;1f_y0u_Kn0w_En0uGH_y0u_Kn0w_1t_4ll&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="course-2"><a href="#course-2" class="headerlink" title="course 2"></a>course 2</h1><p><strong>qusetion 1:</strong></p>
-<p><img src="/cryptohack.assets/image-20220311194603637.png" alt="image-20220311194603637"></p>
+<img src="/2022/03/06/cryptohack%E9%A2%98%E8%A7%A3/9.png" class="">
+
 <p>题解：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="built_in">print</span>(gmpy2.gcd(<span class="number">66528</span>,<span class="number">52920</span>))</span><br><span class="line"><span class="comment">#1512</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2print(gmpy2.gcd(<span class="number">66528</span>,<span class="number">52920</span>))<span class="comment">#1512</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>qusetion 2</strong></p>
-<p><img src="/cryptohack.assets/image-20220311195426292.png" alt="image-20220311195426292"></p>
+<img src="/2022/03/06/cryptohack%E9%A2%98%E8%A7%A3/10.png" class="">
+
 <p>题意：扩展gcd</p>
 <p><strong>代码解决</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">min</span>(gmpy2.gcdext(<span class="number">26513</span>,<span class="number">32321</span>)))</span><br><span class="line"><span class="comment">#-8404</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2print(<span class="built_in">min</span>(gmpy2.gcdext(<span class="number">26513</span>,<span class="number">32321</span>)))<span class="comment">#-8404</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>qusetion 3：</strong></p>
-<p><img src="/cryptohack.assets/image-20220311195836987.png" alt="image-20220311195836987"></p>
+<img src="/2022/03/06/cryptohack%E9%A2%98%E8%A7%A3/11.png" class="">
+
 <p>解题代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">min</span>(<span class="number">11</span>%<span class="number">6</span>,<span class="number">8146798528947</span>%<span class="number">17</span>))</span><br><span class="line"><span class="comment">#4</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">min</span>(<span class="number">11</span>%<span class="number">6</span>,<span class="number">8146798528947</span>%<span class="number">17</span>))<span class="comment">#4</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>qusetion 4</strong></p>
-<p><img src="/cryptohack.assets/image-20220311200226356.png" alt="image-20220311200226356"></p>
+<img src="/2022/03/06/cryptohack%E9%A2%98%E8%A7%A3/12.png" class="">
+
 <p>解题代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">pow</span>(<span class="number">273246787654</span>,<span class="number">65536</span>,<span class="number">65537</span>))</span><br><span class="line"><span class="comment">#1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">pow</span>(<span class="number">273246787654</span>,<span class="number">65536</span>,<span class="number">65537</span>))<span class="comment">#1</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>qusetion 5：</strong></p>
 <p>题意：求逆元</p>
-<p><img src="/cryptohack.assets/image-20220311200411070.png" alt="image-20220311200411070"></p>
+<img src="/2022/03/06/cryptohack%E9%A2%98%E8%A7%A3/13.png" class="">
+
 <p>题解：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> gmpy2 <span class="keyword">import</span> invert</span><br><span class="line"><span class="built_in">print</span>(invert(<span class="number">3</span>,<span class="number">13</span>))</span><br><span class="line"><span class="comment">#9</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> gmpy2 <span class="keyword">import</span> invertprint(invert(<span class="number">3</span>,<span class="number">13</span>))<span class="comment">#9</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>qusetion 6：</strong></p>
-<p><img src="/cryptohack.assets/image-20220311200821924.png" alt="image-20220311200821924"></p>
+<img src="/2022/03/06/cryptohack%E9%A2%98%E8%A7%A3/14.png" class="">
+
 <p>题解：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p = <span class="number">29</span></span><br><span class="line">ints = [<span class="number">14</span>,<span class="number">6</span>,<span class="number">11</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (<span class="number">29</span>):</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">pow</span>(i,<span class="number">2</span>,<span class="number">29</span>) <span class="keyword">in</span> ints):</span><br><span class="line">        <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p = 29ints = [<span class="number">14</span>,<span class="number">6</span>,<span class="number">11</span>]<span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (<span class="number">29</span>):    <span class="keyword">if</span>(<span class="built_in">pow</span>(i,<span class="number">2</span>,<span class="number">29</span>) <span class="keyword">in</span> ints):        <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
 
 
       
@@ -474,7 +571,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/04/AliceandBob/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/01/Math/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -487,72 +584,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/04/AliceandBob/" class="post-title-link" itemprop="url">AliceandBob</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2022-03-04 20:35:23 / 修改时间：20:48:41" itemprop="dateCreated datePublished" datetime="2022-03-04T20:35:23+08:00">2022-03-04</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Alice-and-Bob-原理"><a href="#Alice-and-Bob-原理" class="headerlink" title="Alice and Bob 原理"></a>Alice and Bob 原理</h1><p><img src="/AliceandBob.assets/image-20220304204737922.png" alt="image-20220304204737922"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/01/MATH/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wch">
-      <meta itemprop="description" content="初来乍到 多多关照">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LX3820">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/01/MATH/" class="post-title-link" itemprop="url">MATH</a>
+          <a href="/2022/03/01/Math/" class="post-title-link" itemprop="url">MATH</a>
         </h2>
 
         <div class="post-meta-container">
@@ -570,7 +602,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-05 19:49:37" itemprop="dateModified" datetime="2022-03-05T19:49:37+08:00">2022-03-05</time>
+      <time title="修改时间：2022-03-12 19:57:50" itemprop="dateModified" datetime="2022-03-12T19:57:50+08:00">2022-03-12</time>
     </span>
 
   
@@ -644,7 +676,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/17/hgame%E9%A2%98%E8%A7%A3/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/23/Crypto-RSA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -657,104 +689,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/02/17/hgame%E9%A2%98%E8%A7%A3/" class="post-title-link" itemprop="url">hgame题解</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-02-17 16:18:02" itemprop="dateCreated datePublished" datetime="2022-02-17T16:18:02+08:00">2022-02-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-12 18:33:19" itemprop="dateModified" datetime="2022-03-12T18:33:19+08:00">2022-03-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/crypto/" itemprop="url" rel="index"><span itemprop="name">crypto</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Easy-RSA"><a href="#Easy-RSA" class="headerlink" title="Easy RSA"></a>Easy RSA</h1>
-
-<p><strong>以下是题目：</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> gcd</span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"><span class="keyword">from</span> gmpy2 <span class="keyword">import</span> next_prime</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> getPrime</span><br><span class="line"><span class="keyword">from</span> secret <span class="keyword">import</span> flag<span class="comment">##意思是将flag进行了加密，让你解出flag</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">encrypt</span>(<span class="params">c</span>):</span></span><br><span class="line">    p = getPrime(<span class="number">8</span>)</span><br><span class="line">    q = getPrime(<span class="number">8</span>)</span><br><span class="line">    e = randint(<span class="number">0</span>, p * q)</span><br><span class="line">    <span class="keyword">while</span> gcd(e, (p - <span class="number">1</span>) * (q - <span class="number">1</span>)) != <span class="number">1</span>:</span><br><span class="line">        e = <span class="built_in">int</span>(next_prime(e))</span><br><span class="line">    <span class="keyword">return</span> e, p, q, <span class="built_in">pow</span>(<span class="built_in">ord</span>(c), e, p * q)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">list</span>(<span class="built_in">map</span>(encrypt, flag)))</span><br><span class="line">    <span class="comment"># [(12433, 149, 197, 104), (8147, 131, 167, 6633), (10687, 211, 197, 35594), (19681, 131, 211, 15710), (33577, 251, 211, 38798), (30241, 157, 251, 35973), (293, 211, 157, 31548), (26459, 179, 149, 4778), (27479, 149, 223, 32728), (9029, 223, 137, 20696), (4649, 149, 151, 13418), (11783, 223, 251, 14239), (13537, 179, 137, 11702), (3835, 167, 139, 20051), (30983, 149, 227, 23928), (17581, 157, 131, 5855), (35381, 223, 179, 37774), (2357, 151, 223, 1849), (22649, 211, 229, 7348), (1151, 179, 223, 17982), (8431, 251, 163, 30226), (38501, 193, 211, 30559), (14549, 211, 151, 21143), (24781, 239, 241, 45604), (8051, 179, 131, 7994), (863, 181, 131, 11493), (1117, 239, 157, 12579), (7561, 149, 199, 8960), (19813, 239, 229, 53463), (4943, 131, 157, 14606), (29077, 191, 181, 33446), (18583, 211, 163, 31800), (30643, 173, 191, 27293), (11617, 223, 251, 13448), (19051, 191, 151, 21676), (18367, 179, 157, 14139), (18861, 149, 191, 5139), (9581, 211, 193, 25595)]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>解题代码：</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> gmpy2 <span class="keyword">import</span> invert</span><br><span class="line">cipher=[(<span class="number">12433</span>, <span class="number">149</span>, <span class="number">197</span>, <span class="number">104</span>), (<span class="number">8147</span>, <span class="number">131</span>, <span class="number">167</span>, <span class="number">6633</span>), (<span class="number">10687</span>, <span class="number">211</span>, <span class="number">197</span>, <span class="number">35594</span>), (<span class="number">19681</span>, <span class="number">131</span>, <span class="number">211</span>, <span class="number">15710</span>), (<span class="number">33577</span>, <span class="number">251</span>, <span class="number">211</span>, <span class="number">38798</span>), (<span class="number">30241</span>, <span class="number">157</span>, <span class="number">251</span>, <span class="number">35973</span>), (<span class="number">293</span>, <span class="number">211</span>, <span class="number">157</span>, <span class="number">31548</span>), (<span class="number">26459</span>, <span class="number">179</span>, <span class="number">149</span>, <span class="number">4778</span>), (<span class="number">27479</span>, <span class="number">149</span>, <span class="number">223</span>, <span class="number">32728</span>), (<span class="number">9029</span>, <span class="number">223</span>, <span class="number">137</span>, <span class="number">20696</span>), (<span class="number">4649</span>, <span class="number">149</span>, <span class="number">151</span>, <span class="number">13418</span>), (<span class="number">11783</span>, <span class="number">223</span>, <span class="number">251</span>, <span class="number">14239</span>), (<span class="number">13537</span>, <span class="number">179</span>, <span class="number">137</span>, <span class="number">11702</span>), (<span class="number">3835</span>, <span class="number">167</span>, <span class="number">139</span>, <span class="number">20051</span>), (<span class="number">30983</span>, <span class="number">149</span>, <span class="number">227</span>, <span class="number">23928</span>), (<span class="number">17581</span>, <span class="number">157</span>, <span class="number">131</span>, <span class="number">5855</span>), (<span class="number">35381</span>, <span class="number">223</span>, <span class="number">179</span>, <span class="number">37774</span>), (<span class="number">2357</span>, <span class="number">151</span>, <span class="number">223</span>, <span class="number">1849</span>), (<span class="number">22649</span>, <span class="number">211</span>, <span class="number">229</span>, <span class="number">7348</span>), (<span class="number">1151</span>, <span class="number">179</span>, <span class="number">223</span>, <span class="number">17982</span>), (<span class="number">8431</span>, <span class="number">251</span>, <span class="number">163</span>, <span class="number">30226</span>), (<span class="number">38501</span>, <span class="number">193</span>, <span class="number">211</span>, <span class="number">30559</span>), (<span class="number">14549</span>, <span class="number">211</span>, <span class="number">151</span>, <span class="number">21143</span>), (<span class="number">24781</span>, <span class="number">239</span>, <span class="number">241</span>, <span class="number">45604</span>), (<span class="number">8051</span>, <span class="number">179</span>, <span class="number">131</span>, <span class="number">7994</span>), (<span class="number">863</span>, <span class="number">181</span>, <span class="number">131</span>, <span class="number">11493</span>), (<span class="number">1117</span>, <span class="number">239</span>, <span class="number">157</span>, <span class="number">12579</span>), (<span class="number">7561</span>, <span class="number">149</span>, <span class="number">199</span>, <span class="number">8960</span>), (<span class="number">19813</span>, <span class="number">239</span>, <span class="number">229</span>, <span class="number">53463</span>), (<span class="number">4943</span>, <span class="number">131</span>, <span class="number">157</span>, <span class="number">14606</span>), (<span class="number">29077</span>, <span class="number">191</span>, <span class="number">181</span>, <span class="number">33446</span>), (<span class="number">18583</span>, <span class="number">211</span>, <span class="number">163</span>, <span class="number">31800</span>), (<span class="number">30643</span>, <span class="number">173</span>, <span class="number">191</span>, <span class="number">27293</span>), (<span class="number">11617</span>, <span class="number">223</span>, <span class="number">251</span>, <span class="number">13448</span>), (<span class="number">19051</span>, <span class="number">191</span>, <span class="number">151</span>, <span class="number">21676</span>), (<span class="number">18367</span>, <span class="number">179</span>, <span class="number">157</span>, <span class="number">14139</span>), (<span class="number">18861</span>, <span class="number">149</span>, <span class="number">191</span>, <span class="number">5139</span>), (<span class="number">9581</span>, <span class="number">211</span>, <span class="number">193</span>, <span class="number">25595</span>)]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decrypt</span>(<span class="params">cipher</span>):</span></span><br><span class="line">   e,p,q,c=cipher</span><br><span class="line">   <span class="keyword">return</span>  <span class="built_in">chr</span>(<span class="built_in">pow</span>((c), invert(e,(p-<span class="number">1</span>)*(q-<span class="number">1</span>)), p * q))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;&quot;</span>.join(<span class="built_in">map</span>(decrypt, cipher)))</span><br><span class="line">    <span class="comment"># [(12433, 149, 197, 104), (8147, 131, 167, 6633), (10687, 211, 197, 35594), (19681, 131, 211, 15710), (33577, 251, 211, 38798), (30241, 157, 251, 35973), (293, 211, 157, 31548), (26459, 179, 149, 4778), (27479, 149, 223, 32728), (9029, 223, 137, 20696), (4649, 149, 151, 13418), (11783, 223, 251, 14239), (13537, 179, 137, 11702), (3835, 167, 139, 20051), (30983, 149, 227, 23928), (17581, 157, 131, 5855), (35381, 223, 179, 37774), (2357, 151, 223, 1849), (22649, 211, 229, 7348), (1151, 179, 223, 17982), (8431, 251, 163, 30226), (38501, 193, 211, 30559), (14549, 211, 151, 21143), (24781, 239, 241, 45604), (8051, 179, 131, 7994), (863, 181, 131, 11493), (1117, 239, 157, 12579), (7561, 149, 199, 8960), (19813, 239, 229, 53463), (4943, 131, 157, 14606), (29077, 191, 181, 33446), (18583, 211, 163, 31800), (30643, 173, 191, 27293), (11617, 223, 251, 13448), (19051, 191, 151, 21676), (18367, 179, 157, 14139), (18861, 149, 191, 5139), (9581, 211, 193, 25595)]</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="Matryoshka"><a href="#Matryoshka" class="headerlink" title="Matryoshka"></a>Matryoshka</h1><p><img src="/hgame%E9%A2%98%E8%A7%A3.assets/Matryoshka-16450874799731.png"></p>
-<p><strong>题目给了很小的提示：Vigenere：hgame(这就是加密key)</strong></p>
-<p>懒得慢慢写了，直接写解题步骤吧：</p>
-<p><strong>1.打开文件发现是盲文于是用工具盲文解密：解密工具（上链接）：</strong></p>
-<hr>
-<p><strong>解密之后发现很像摩斯密码（但是又不像，因为还是有盲文，但是非常接近摩斯了，就把 ：(原文可不是冒号)都改成”.”用python(写个简单的字符串替换)）</strong></p>
-<p><strong>2.替换之后就变成摩斯了，不过不要高兴太早：摩斯解密后发现没什么东西于是将他们逆转过来！（用python的.reverse()）逆转之后再解码发现可以</strong></p>
-<p><strong>3.十六进制解码：</strong></p>
-<p><strong>4.解码后发现很像base64，但是base64无法解，所以就看到提示，维吉尼斯解码（在我博客Crypto有提到原理和解密加密代码）</strong></p>
-<p><strong>5.解完就舒坦了，base64，栅栏，凯撒okay啦！</strong></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/23/new%20report/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Wch">
-      <meta itemprop="description" content="初来乍到 多多关照">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LX3820">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/01/23/new%20report/" class="post-title-link" itemprop="url">CRYPTO</a>
+          <a href="/2022/01/23/Crypto-RSA/" class="post-title-link" itemprop="url">CRYPTO</a>
         </h2>
 
         <div class="post-meta-container">
@@ -772,7 +707,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-02-17 16:16:05" itemprop="dateModified" datetime="2022-02-17T16:16:05+08:00">2022-02-17</time>
+      <time title="修改时间：2022-03-12 19:24:29" itemprop="dateModified" datetime="2022-03-12T19:24:29+08:00">2022-03-12</time>
     </span>
 
   
@@ -823,7 +758,8 @@
 <p><strong>(3).计算m2 &#x3D; (c^dq^) mod q;</strong></p>
 <p><strong>(4).计算m&#x3D;( ( ( (m2-m1) $\times$ I) %q )$\times$ p + m1 ) % n</strong></p>
 <p><strong>以下是证明:</strong></p>
-<p>![](D:\blog\source_posts\new report.assets\dp,dq泄露-16450709841481.png)</p>
+<img src="/2022/01/23/Crypto-RSA/dp,dq%E6%B3%84%E9%9C%B2.png" class="">
+
 <p><strong>以下是python源代码</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line">dp= ...</span><br><span class="line">dq= ...</span><br><span class="line">c= ...</span><br><span class="line">p= ...</span><br><span class="line">q= ...</span><br><span class="line">n=q*p</span><br><span class="line">m1=<span class="built_in">pow</span>(c,dp,p)</span><br><span class="line">m2=<span class="built_in">pow</span>(c,dq,q)</span><br><span class="line">I=gmpy2.invert(p,q)</span><br><span class="line">m=((((m2-m1)*I)%q)*p+m1)%n</span><br><span class="line"><span class="built_in">print</span>(m)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -833,7 +769,8 @@
 <p><strong>1.已知n，e，dp</strong></p>
 <p><strong>2.dp e&#x3D; ed mod (p-1)</strong></p>
 <p><strong>以下是大哥的笔记:</strong></p>
-<p>![](new report.assets&#x2F;dp泄露.png)</p>
+<img src="/2022/01/23/Crypto-RSA/dp%E6%B3%84%E9%9C%B2.png" class="">
+
 <p><strong>以下是源代码:</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line">e = ...</span><br><span class="line">n = ...</span><br><span class="line">dp = ...</span><br><span class="line">c = ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,e):                   <span class="comment">#在范围(1,e)之间进行遍历</span></span><br><span class="line">    <span class="keyword">if</span>(dp*e-<span class="number">1</span>)%i == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">if</span> n%(((dp*e-<span class="number">1</span>)//i)+<span class="number">1</span>) == <span class="number">0</span>:   <span class="comment">#存在p，使得n能被p整除</span></span><br><span class="line">            p=((dp*e-<span class="number">1</span>)//i)+<span class="number">1</span></span><br><span class="line">            q=n//(((dp*e-<span class="number">1</span>)//i)+<span class="number">1</span>)</span><br><span class="line">            phi=(q-<span class="number">1</span>)*(p-<span class="number">1</span>)            <span class="comment">#欧拉定理</span></span><br><span class="line">            d=gmpy2.invert(e,phi)         <span class="comment">#求模逆</span></span><br><span class="line">            m=<span class="built_in">pow</span>(c,d,n)               <span class="comment">#快速求幂取模运算</span></span><br><span class="line">            <span class="built_in">print</span>(m)       <span class="comment">#16进制转文本   </span></span><br></pre></td></tr></table></figure>
 
@@ -856,7 +793,8 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> gmpy2 <span class="keyword">import</span> gcd,invert</span><br><span class="line"><span class="keyword">from</span> libnum <span class="keyword">import</span> n2s</span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line">n1 = ...</span><br><span class="line">c1 = ...</span><br><span class="line">n2 = ...</span><br><span class="line">c2 = ...</span><br><span class="line">q = gcd(n1, n2)</span><br><span class="line">p = n1//q</span><br><span class="line">r = n2//q</span><br><span class="line"><span class="built_in">print</span>(n2s(<span class="built_in">pow</span>(c1, <span class="built_in">int</span>(invert(e, (p-<span class="number">1</span>) * (q-<span class="number">1</span>))), n1)).decode(), end = <span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(n2s(<span class="built_in">pow</span>(c2, <span class="built_in">int</span>(invert(e, (r - <span class="number">1</span>) * (q - <span class="number">1</span>))), n2)).decode(), end=<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="comment">#求私钥d的时候大整数n不同所以不易求欧拉函数；因此我们可以求n1和n2的最大公约数，然后随便选取一个n1或n2来除以最大公约数q；最后用r或者用p求出来的欧拉函数都相同。</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="x3D-x3D-维吉尼亚加密和解密-x3D-x3D"><a href="#x3D-x3D-维吉尼亚加密和解密-x3D-x3D" class="headerlink" title="&#x3D;&#x3D;维吉尼亚加密和解密&#x3D;&#x3D;"></a>&#x3D;&#x3D;维吉尼亚加密和解密&#x3D;&#x3D;</h1><p><strong>维吉尼亚加密解密原理：</strong></p>
-<p>![](new report.assets&#x2F;维吉尼亚原理.png)</p>
+<img src="/2022/01/23/Crypto-RSA/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%8E%9F%E7%90%86.png" class="">
+
 <p><strong>以下是加密源代码：</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">encrypt</span>(<span class="params">message,key</span>):</span><span class="comment">#加密</span></span><br><span class="line">    cipher = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    non_alpha_count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (<span class="built_in">len</span>(message)):<span class="comment">#遍历</span></span><br><span class="line">        <span class="keyword">if</span> message[i].isalpha():</span><br><span class="line">            <span class="keyword">if</span> message[i].islower():</span><br><span class="line">                offset = <span class="built_in">ord</span>(key[(i - non_alpha_count) % <span class="built_in">len</span>(key)]) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">                cipher += <span class="built_in">chr</span>((<span class="built_in">ord</span> (message[i]) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>) + offset) % <span class="number">26</span> + <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                offset = <span class="built_in">ord</span>(key[(i - non_alpha_count) % <span class="built_in">len</span>(key)]) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">                cipher += <span class="built_in">chr</span>((<span class="built_in">ord</span> (message[i]) - <span class="built_in">ord</span>(<span class="string">&#x27;A&#x27;</span>) + offset) % <span class="number">26</span> + <span class="built_in">ord</span>(<span class="string">&#x27;A&#x27;</span>))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            cipher += message[i]</span><br><span class="line">            non_alpha_count += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> cipher</span><br><span class="line">message=<span class="string">&#x27;YzBibXZnaHl6X3swUmF6X2d4eG0wdGhrem9fMG9iMG1fdm9rY2N6dF8hcn0=&#x27;</span></span><br><span class="line">key=<span class="string">&#x27;hgame&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(encrypt(message,key))</span><br></pre></td></tr></table></figure>
 
