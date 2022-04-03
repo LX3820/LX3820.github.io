@@ -1,0 +1,14 @@
+#web_bg {
+  /* 使用 <background-color> */
+background: green;
+
+/* 使用 <bg-image> 和 <repeat-style> */
+background: url("1.jpg") repeat-y;
+
+/* 使用 <box> 和 <background-color> */
+background: border-box red;
+
+/* 将背景设为一张居中放大的图片 */
+background: no-repeat center/80% url("../img/1.png");
+
+}
