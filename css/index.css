@@ -5636,3 +5636,18 @@ blockquote.pullquote.right {
 .read-mode #article-container .note .note-icon {
   color: var(--font-color);
 }
+.recent-posts {
+  background: rgba(255,255,255,0.097);
+}
+.recent-post-item {
+  background: rgba(255,255,255,0) !important;
+}
+.card-widget {
+  background: rgba(255,255,255,0) !important;
+}
+.post {
+  filter: filter: alpha(opacity=0); !important;
+}
+.post_bg {
+  background: rgba(255,255,255,0) !important;
+}
